@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="topics">
+        <item>Adjektiivi</item>
+        <item>Alkoholi</item>
+        <item>Alkuaine</item>
+        <item>Alkuaine</item>
+        <item>Amerikan osavaltio</item>
+        <item>Ammatti</item>
+        <item>Anime</item>
+        <item>Applikaatio</item>
+        <item>Artisti </item>
+        <item>Ase</item>
+        <item>Asuste</item>
+        <item>Automerkki</item>
+        <item>Baari </item>
+        <item>Brändi</item>
+        <item>Digimon</item>
+        <item>Disney -hahmo</item>
+        <item>Draamaelokuva</item>
+        <item>Elektroniikkamerkki</item>
+        <item>Elokuva</item>
+        <item>Eläin</item>
+        <item>Energiajuoma</item>
+        <item>Etunimi</item>
+        <item>Fetissi</item>
+        <item>FPS-peli</item>
+        <item>Hajuvesi</item>
+        <item>Hedelmä</item>
+        <item>Historian henkilö</item>
+        <item>Horoskooppi</item>
+        <item>Huonekalu</item>
+        <item>Huvi/vesipuisto</item>
+        <item>Hyönteinen</item>
+        <item>Ikea-tuote</item>
+        <item>Internet sivu</item>
+        <item>Jalkapalloilija</item>
+        <item>Jalkapallojoukkue</item>
+        <item>Jalokivi</item>
+        <item>Joki</item>
+        <item>Joki</item>
+        <item>Julkisuuden henkilö</item>
+        <item>Juoma</item>
+        <item>Järvi</item>
+        <item>Jääkiekkoilija</item>
+        <item>Jääkiekkojoukkue</item>
+        <item>Jäätelö</item>
+        <item>Kala</item>
+        <item>Kappale</item>
+        <item>Kasvi</item>
+        <item>Kauhuelokuva</item>
+        <item>Kauppa</item>
+        <item>Kaupunki</item>
+        <item>Keksi</item>
+        <item>Kiinalainen horoskooppi</item>
+        <item>Kirja</item>
+        <item>Kirjailija</item>
+        <item>Kirjan hahmo</item>
+        <item>Kissarotu</item>
+        <item>Kodinkone</item>
+        <item>Koirarotu</item>
+        <item>Koirarotu</item>
+        <item>Komediaelokuva</item>
+        <item>Konsolipeli</item>
+        <item>Koomikko</item>
+        <item>Koripalloilija</item>
+        <item>Koripallojoukkue</item>
+        <item>Korttipeli</item>
+        <item>Kosmetiikka</item>
+        <item>Koulu</item>
+        <item>Kouluaine</item>
+        <item>Kukka</item>
+        <item>Kuninkaallinen </item>
+        <item>Kuvataideväline</item>
+        <item>Käsikirjoittaja</item>
+        <item>Laulun säkeistö</item>
+        <item>Leivonnainen</item>
+        <item>Lelu</item>
+        <item>Lintulaji</item>
+        <item>Luonnonilmiö</item>
+        <item>Luu</item>
+        <item>Lääke</item>
+        <item>Maanosa</item>
+        <item>Manga</item>
+        <item>Marja</item>
+        <item>Mauste</item>
+        <item>Mitta</item>
+        <item>Muotitalo</item>
+        <item>Mustavalkoelokuva</item>
+        <item>Mytologian henkilö</item>
+        <item>Nisäkäs</item>
+        <item>Nähtävyys</item>
+        <item>Näyttelijä</item>
+        <item>Ohjaaja</item>
+        <item>Pelihahmo</item>
+        <item>Pelihirviö</item>
+        <item>Pelikonsoli</item>
+        <item>Piirretty</item>
+        <item>Pokemon</item>
+        <item>Poliitikko</item>
+        <item>Presidentti</item>
+        <item>Puhelinoperaattori</item>
+        <item>Puhelinvalmistaja</item>
+        <item>Puulaji</item>
+        <item>Raaka-aine</item>
+        <item>Raamatub henkilö</item>
+        <item>Rakennusmateriaali</item>
+        <item>Ravintola</item>
+        <item>Rokkari</item>
+        <item>Ruoka</item>
+        <item>Ruumiinosa</item>
+        <item>Sairaus</item>
+        <item>Sanonta</item>
+        <item>Satukirja</item>
+        <item>Scifi-elokuva</item>
+        <item>Seksilelu</item>
+        <item>Seurapeli</item>
+        <item>Siivousväline</item>
+        <item>Simpsons-hahmo</item>
+        <item>Sipsi</item>
+        <item>Sota</item>
+        <item>Sukunimi</item>
+        <item>Suomalainen elokuva</item>
+        <item>Supersankari</item>
+        <item>Suure</item>
+        <item>Taiteilija</item>
+        <item>Taivaankappale</item>
+        <item>Tapahtuma</item>
+        <item>Taruolento</item>
+        <item>Tietokoneohjelma</item>
+        <item>Tietokonepeli</item>
+        <item>Toimintaelokuva</item>
+        <item>TV-kanava</item>
+        <item>TV-kokki</item>
+        <item>TV-ohjelma</item>
+        <item>Urheilija</item>
+        <item>Urheilulaji</item>
+        <item>Uskonto</item>
+        <item>Vaatekappale</item>
+        <item>Vaatemerkki</item>
+        <item>Valtio</item>
+        <item>Virvoitusjuoma</item>
+        <item>Viski</item>
+        <item>Väri</item>
+        <item>Youtubettaja</item>
+    </string-array>
+
+</resources>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#444444"
+    tools:context=".topicFragment">
+
+    <!-- TODO: Update blank fragment layout -->
+    <TextView
+        android:id="@+id/fullscreen_content3"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:autoText="false"
+        android:elegantTextHeight="false"
+        android:gravity="center"
+        android:keepScreenOn="true"
+        android:text="pitkätekstitesti"
+        android:textAllCaps="false"
+        android:textColor="@android:color/white"
+        android:textSize="100sp"
+        android:textStyle="bold"
+        android:visibility="visible" />
+
+</FrameLayout>
