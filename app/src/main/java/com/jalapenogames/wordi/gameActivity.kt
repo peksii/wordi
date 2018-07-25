@@ -12,14 +12,22 @@ import android.support.v4.view.ViewPager
 import android.support.v4.view.PagerAdapter
 import android.support.v4.app.FragmentManager
 import android.widget.Adapter
+import android.widget.Toast
 
 
 /**
  * An example full-screen activity that shows and hides the system UI (i.e.
  * status bar and navigation/system bar) with user interaction.
  */
-class gameActivity : AppCompatActivity(), topicFragment.OnFragmentInteractionListener
+class gameActivity : AppCompatActivity(), topicFragment.OnFragmentInteractionListener,
+        scoreFragment.OnFragmentInteractionListener
 {
+    private var score1 = 0
+    private var score2 = 0
+    private var score3 = 0
+    private var score4 = 0
+    private var score5 = 0
+    private var score6 = 0
     private var mPager: ViewPager? = null
     private var testi = false
     private var mPagerAdapter: PagerAdapter? = null
@@ -55,6 +63,30 @@ class gameActivity : AppCompatActivity(), topicFragment.OnFragmentInteractionLis
             delayedHide(AUTO_HIDE_DELAY_MILLIS)
         }
         false
+    }
+
+    override fun onButtonPressed(int: Int) {
+        if (int == 1) {
+            score1++;
+
+        }
+        else if (int == 2) {
+            score2++;
+        }
+        else if (int == 3) {
+            score3++;
+        }
+        else if (int == 4) {
+            score4++;
+        }
+        else if (int == 5) {
+            score5++;
+        }
+        else if (int == 6) {
+            score6++;
+        }
+        Thread.sleep(500)
+        onTimerToZero(true)
     }
 
     override fun onTimerToZero(boolean: Boolean) {
@@ -100,7 +132,6 @@ class gameActivity : AppCompatActivity(), topicFragment.OnFragmentInteractionLis
             mPager?.setCurrentItem(i)
         }
     }
-
 
 
 

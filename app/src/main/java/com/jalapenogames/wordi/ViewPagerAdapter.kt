@@ -16,11 +16,11 @@ class ViewPagerAdapter internal constructor(fm: FragmentManager) : FragmentPager
 
     override fun getItem(position: Int): Fragment? {
         var fragment: Fragment? = null
-        when (position) {
+        when (position%3) {
             0 -> fragment = topicFragment()
             1 -> fragment = letterFragment()
-            2 -> fragment = topicFragment()
-            3 -> fragment = letterFragment()
+            2 -> fragment = scoreFragment()
+            3 -> fragment = topicFragment()
             4 -> fragment = topicFragment()
             5 -> fragment = letterFragment()
             6 -> fragment = topicFragment()
@@ -43,7 +43,8 @@ class ViewPagerAdapter internal constructor(fm: FragmentManager) : FragmentPager
     }
 
     override fun getCount(): Int {
-        return COUNT
+        return 100
+        //return COUNT
     }
 
 
