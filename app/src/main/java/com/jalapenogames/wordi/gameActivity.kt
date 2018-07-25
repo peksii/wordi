@@ -18,10 +18,10 @@ import android.widget.Adapter
  * An example full-screen activity that shows and hides the system UI (i.e.
  * status bar and navigation/system bar) with user interaction.
  */
-class gameActivity : AppCompatActivity()
+class gameActivity : AppCompatActivity(), topicFragment.OnFragmentInteractionListener
 {
-
     private var mPager: ViewPager? = null
+    private var testi = false
     private var mPagerAdapter: PagerAdapter? = null
     private val mHideHandler = Handler()
     private val mHidePart2Runnable = Runnable {
@@ -57,6 +57,17 @@ class gameActivity : AppCompatActivity()
         false
     }
 
+    override fun onTimerToZero(boolean: Boolean) {
+        val currPos: Int = mPager!!.currentItem
+        if (boolean && !testi) {
+            testi = true
+            mPager?.setCurrentItem(1+currPos)
+
+        }
+        if (!boolean) {
+            testi = false
+        }
+    }
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 

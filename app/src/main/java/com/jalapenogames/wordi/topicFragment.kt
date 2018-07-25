@@ -3,12 +3,14 @@ package com.jalapenogames.wordi
 import android.content.Context
 import android.net.Uri
 import android.os.Bundle
+import android.os.CountDownTimer
 import android.support.v4.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 import java.util.*
+
 
 
 // TODO: Rename parameter arguments, choose names that match
@@ -26,7 +28,8 @@ private const val ARG_PARAM2 = "param2"
  *
  */
 class topicFragment : Fragment() {
-    // TODO: Rename and change types of parameters
+
+    var timerCount: CountDownTimer = timer(7000,1000)
     private var viewId: TextView? = null
     private var param1: String? = null
     private var param2: String? = null
@@ -38,6 +41,7 @@ class topicFragment : Fragment() {
             param1 = it.getString(ARG_PARAM1)
             param2 = it.getString(ARG_PARAM2)
         }
+
     }
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
@@ -47,34 +51,78 @@ class topicFragment : Fragment() {
         return inflater.inflate(R.layout.fragment_topic, container, false)
     }
 
-    // TODO: Rename method, update argument and hook method into UI event
-    fun onButtonPressed(uri: Uri) {
-        listener?.onFragmentInteraction(uri)
-    }
 
     override fun onAttach(context: Context) {
         super.onAttach(context)
         if (context is OnFragmentInteractionListener) {
             listener = context
-            randomLetterToScreen()
+            //randomLetterToScreen()
         } else {
             //throw RuntimeException(context.toString() + " must implement OnFragmentInteractionListener")
         }
     }
-    override fun onStart() {
 
+    override fun onStart() {
         super.onStart()
         randomLetterToScreen()
+    }
+    override fun onResume() {
+
+        super.onResume()
+
+        if (!userVisibleHint){
+
+            timerCount.cancel()
+            return;
+        }
+
+        timerCount = timer(8000,1000).start()
+
+    }
+
+    override fun onStop() {
+        super.onStop()
+        timerCount.cancel()
+    }
+    override fun setUserVisibleHint(isVisibleToUser: Boolean) {
+        super.setUserVisibleHint(isVisibleToUser)
+        if (isVisibleToUser && isResumed()) {
+
+            onResume()
+        }
     }
 
     fun randomLetterToScreen() {
 
         viewId = view?.findViewById<TextView>(R.id.fullscreen_content3)
+
         val topics = resources.getStringArray(R.array.topics)
         val randNumber = Random().nextInt(topics.size)
         val topic = topics[randNumber]
         viewId?.setText(topic)
+
     }
+    private fun timer(millisInFuture:Long,countDownInterval:Long):CountDownTimer{
+        return object: CountDownTimer(millisInFuture,countDownInterval){
+            val mTextField = view?.findViewById<TextView>(R.id.countDownTimerText)
+            override fun onTick(millisUntilFinished: Long){
+                if (millisUntilFinished / 1000 <= 5){
+                    mTextField?.setText((millisUntilFinished / 1000).toString())
+                }
+                if (!userVisibleHint) {
+                    timerCount.cancel()
+                    mTextField?.setText("")
+                }
+                listener?.onTimerToZero(false)
+            }
+
+            override fun onFinish() {
+                mTextField?.setText("")
+                listener?.onTimerToZero(true)
+            }
+        }
+    }
+
     override fun onDetach() {
         super.onDetach()
         listener = null
@@ -94,7 +142,8 @@ class topicFragment : Fragment() {
      */
     interface OnFragmentInteractionListener {
         // TODO: Update argument type and name
-        fun onFragmentInteraction(uri: Uri)
+        //fun onFragmentInteraction(uri: Uri)
+        fun onTimerToZero(boolean: Boolean)
     }
 
     companion object {
