@@ -2,4 +2,11 @@
 <resources>
     <string name="app_name">wordi</string>
     <string name="new_game">Uusi peli</string>
+    <string name="player_name1">Pelaaja 1</string>
+    <string name="player_name2">Pelaaja 2</string>
+    <string name="player_name3">Pelaaja 3</string>
+    <string name="player_name4">Pelaaja 4</string>
+    <string name="player_name5">Pelaaja 5</string>
+    <string name="player_name6">Pelaaja 6</string>
+    <string name="skip_button">Ohi</string>
 </resources>

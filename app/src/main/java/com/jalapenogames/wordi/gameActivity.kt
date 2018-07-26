@@ -15,6 +15,7 @@ import android.widget.Adapter
 import android.widget.Toast
 
 
+
 /**
  * An example full-screen activity that shows and hides the system UI (i.e.
  * status bar and navigation/system bar) with user interaction.
@@ -22,12 +23,14 @@ import android.widget.Toast
 class gameActivity : AppCompatActivity(), topicFragment.OnFragmentInteractionListener,
         scoreFragment.OnFragmentInteractionListener
 {
+
     private var score1 = 0
     private var score2 = 0
     private var score3 = 0
     private var score4 = 0
     private var score5 = 0
     private var score6 = 0
+    private var skippedCounter = 0;
     private var mPager: ViewPager? = null
     private var testi = false
     private var mPagerAdapter: PagerAdapter? = null
@@ -66,34 +69,51 @@ class gameActivity : AppCompatActivity(), topicFragment.OnFragmentInteractionLis
     }
 
     override fun onButtonPressed(int: Int) {
-        if (int == 1) {
-            score1++;
+        if (int == 0) {
+            skippedCounter++;
+        }
+        else {
+            if (int == 1) {
+                score1 = score1 + 1 + skippedCounter;
 
+            }
+            else if (int == 2) {
+                score2 = score2 + 1 + skippedCounter;
+            }
+            else if (int == 3) {
+                score3 = score3 + 1 + skippedCounter;
+            }
+            else if (int == 4) {
+                score4 = score4 + 1 + skippedCounter;
+            }
+            else if (int == 5) {
+                score5 = score5 + 1 + skippedCounter;
+            }
+            else if (int == 6) {
+                score6 = score6 + 1 + skippedCounter;
+            }
+            skippedCounter = 0
         }
-        else if (int == 2) {
-            score2++;
-        }
-        else if (int == 3) {
-            score3++;
-        }
-        else if (int == 4) {
-            score4++;
-        }
-        else if (int == 5) {
-            score5++;
-        }
-        else if (int == 6) {
-            score6++;
-        }
-        Thread.sleep(500)
+
+        Thread.sleep(200)
+        testi = false
         onTimerToZero(true)
+
     }
+
+    data class Scores(val s1: Int, val s2: Int, val s3: Int, val s4: Int, val s5: Int, val s6: Int)
+
+    fun scoresToFragment(): Scores {
+
+        return Scores(score1, score2, score3, score4, score5, score6)
+    }
+
 
     override fun onTimerToZero(boolean: Boolean) {
         val currPos: Int = mPager!!.currentItem
         if (boolean && !testi) {
             testi = true
-            mPager?.setCurrentItem(1+currPos)
+            mPager?.setCurrentItem(1+currPos, true)
 
         }
         if (!boolean) {
@@ -115,9 +135,11 @@ class gameActivity : AppCompatActivity(), topicFragment.OnFragmentInteractionLis
         // operations to prevent the jarring behavior of controls going away
         // while interacting with the UI.
         dummy_button.setOnTouchListener(mDelayHideTouchListener)
-        mPager = findViewById<ViewPager>(R.id.pager);
+        mPager = findViewById(R.id.pager);
         mPagerAdapter = ViewPagerAdapter(supportFragmentManager)
         mPager?.adapter = mPagerAdapter
+        mPager?.setPageTransformer(true, ZoomOutPageTransformer())
+        //mPager?.setAllowedSwipeDirection(CustomViewPager.SwipeDirection.right)
 
     }
 
